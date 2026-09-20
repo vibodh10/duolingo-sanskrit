@@ -99,8 +99,8 @@ function Exercise({exercise,value,setValue,checked,onCheck,onContinue,correct}){
     <button className="big-word" onClick={()=>setMeaningOpen(!meaningOpen)}><span className="roman-main">{exercise.translit||romanizeText(exercise.word)}</span><small>{exercise.word}</small></button>
     <button className="speaker teaching-speaker" onClick={()=>speak(exercise.word)}>🔊 Hear Sanskrit</button>
     {meaningOpen&&<div className="meaning-card"><strong>{exercise.meaning}</strong><p>{exercise.note}</p></div>}
-    {!meaningOpen&&<p className="tap-hint">Tap the blue word to reveal its meaning. Devanagari is shown only as a reference.</p>}
-    <button className="primary-btn inline" disabled={!meaningOpen} onClick={()=>onContinue(true)}>Got it</button>
+    {!meaningOpen&&<p className="tap-hint">Tap the blue word if you want to reveal its meaning. You can continue at any time.</p>}
+    <button className="primary-btn inline" onClick={()=>onContinue(true)}>Got it</button>
   </section>;
 
   return <>
